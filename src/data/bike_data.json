@@ -1,0 +1,18 @@
+[
+    {
+      "src": "./images/komaki/mx-3.png",
+      "alt": "mx-3",
+      "product":"MX-3"
+    },
+    {
+      "src": "./images/komaki/xgt-charge.png",
+      "alt": "xgt-charge",
+      "product":"XGT-CHARGE"
+    },
+    {
+      "src": "./images/komaki/xgt-classic.png",
+      "alt": "xgt-classic",
+      "product":"XGT-CLASSIC"
+    }
+  ]
+  

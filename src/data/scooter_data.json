@@ -1,0 +1,38 @@
+[
+    {
+      "src": "./images/komaki/x2-vogue.png",
+      "alt": "x2-vogue",
+      "product":"X2-VOGUE"
+    },
+    {
+      "src": "./images/komaki/xgt-km.png",
+      "alt": "xgt-km",
+      "product":"XGT-KM"
+    },
+    {
+      "src": "./images/komaki/xgt-vp.png",
+      "alt": "xgt-vp",
+      "product":"XGT-VP"
+    },
+    {
+      "src": "./images/komaki/xgt-x3.png",
+      "alt": "xgt-x3",
+      "product":"XGT-X3"
+    },
+    {
+      "src": "./images/komaki/xgt-x4.png",
+      "alt": "xgt-x4",
+      "product":"XGT-X4"
+    },
+    {
+      "src": "./images/komaki/xgt-x5.png",
+      "alt": "xgt-x5",
+      "product":"XGT-X5"
+    },
+    {
+      "src": "./images/komaki/x-one.png",
+      "alt": "x-one",
+      "product":"X-ONE"
+    }
+  ]
+  

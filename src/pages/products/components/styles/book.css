@@ -1,0 +1,29 @@
+.main-book {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+}
+
+
+.book-button {
+    border: 0;
+    color:white;
+    border-radius: 3px;
+    background-color: #b97075;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.book-button:hover {
+    background-color: #b0050d;
+    transform: scale(1.05);
+}
+
+.book-button:active {
+    background-color: #8a040a;
+    transform: scale(1);
+}

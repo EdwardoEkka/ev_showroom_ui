@@ -1,0 +1,63 @@
+[
+    {
+      "src": "./images/komaki/ranger.png",
+      "alt": "ranger",
+      "product":"RANGER"
+
+    },
+    {
+        "src": "./images/komaki/ranger1.png",
+        "alt": "ranger1",
+        "product":"RANGER1"
+  
+      },
+      {
+        "src": "./images/komaki/ranger2.png",
+        "alt": "ranger2",
+        "product":"RANGER2"
+  
+      },
+      {
+        "src": "./images/komaki/ranger3.png",
+        "alt": "ranger3",
+        "product":"RANGER3"
+  
+      },
+      {
+        "src": "./images/komaki/ranger4.png",
+        "alt": "ranger4",
+        "product":"RANGER4"
+  
+      },
+      {
+        "src": "./images/komaki/ranger5.png",
+        "alt": "ranger5",
+        "product":"RANGER5"
+  
+      },
+      {
+        "src": "./images/komaki/ranger6.png",
+        "alt": "ranger6",
+        "product":"RANGER6"
+  
+      },
+      {
+        "src": "./images/komaki/ranger7.png",
+        "alt": "ranger7",
+        "product":"RANGER7"
+  
+      },
+      {
+        "src": "./images/komaki/ranger8.png",
+        "alt": "ranger8",
+        "product":"RANGER8"
+  
+      },
+      {
+        "src": "./images/komaki/ranger9.png",
+        "alt": "ranger9",
+        "product":"RANGER9"
+  
+      }  
+  ]
+  
