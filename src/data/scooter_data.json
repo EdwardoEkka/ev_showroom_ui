@@ -1,36 +1,36 @@
 [
     {
-      "src": "./images/komaki/x2-vogue.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/ev-showroom.appspot.com/o/x2-vogue.png?alt=media&token=54bb15c4-d1b5-4e0f-b8a3-4467660f0ed5",
       "alt": "x2-vogue",
       "product":"X2-VOGUE"
     },
     {
-      "src": "./images/komaki/xgt-km.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/ev-showroom.appspot.com/o/xgt-km.png?alt=media&token=9e52dff1-ad78-41f9-a31b-27af7f7b2c09",
       "alt": "xgt-km",
       "product":"XGT-KM"
     },
     {
-      "src": "./images/komaki/xgt-vp.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/ev-showroom.appspot.com/o/xgt-vp.png?alt=media&token=fa0b5f24-4941-4728-967e-ce87520fc9a8",
       "alt": "xgt-vp",
       "product":"XGT-VP"
     },
     {
-      "src": "./images/komaki/xgt-x3.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/ev-showroom.appspot.com/o/xgt-x3.png?alt=media&token=328e9aa5-1a32-40b0-9761-85ecaec6302f",
       "alt": "xgt-x3",
       "product":"XGT-X3"
     },
     {
-      "src": "./images/komaki/xgt-x4.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/ev-showroom.appspot.com/o/xgt-x4.png?alt=media&token=4b505ee4-6f69-40ef-82d9-ce5765ed8e93",
       "alt": "xgt-x4",
       "product":"XGT-X4"
     },
     {
-      "src": "./images/komaki/xgt-x5.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/ev-showroom.appspot.com/o/xgt-x5.png?alt=media&token=dd35c528-55be-45d4-b8db-10513d5cebdc",
       "alt": "xgt-x5",
       "product":"XGT-X5"
     },
     {
-      "src": "./images/komaki/x-one.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/ev-showroom.appspot.com/o/x-one.png?alt=media&token=166e4140-7701-4a69-8c1b-d6532950d689",
       "alt": "x-one",
       "product":"X-ONE"
     }

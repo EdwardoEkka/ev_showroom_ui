@@ -55,7 +55,7 @@ const Hero_Top = () => {
         <div className="right">
           <div className="right-img">
             <img className="main-komaki" src="https://komaki.in/wp-content/uploads/2020/10/site_logo.png" alt="komaki"></img>
-            <img src="./images/komaki.png" alt="komaki"></img>
+            <img src="https://firebasestorage.googleapis.com/v0/b/ev-showroom.appspot.com/o/komaki.png?alt=media&token=ad7a2304-587c-4e99-8825-d74632d875c7" alt="komaki"></img>
           </div>
         </div>
       </div>

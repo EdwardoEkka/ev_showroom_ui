@@ -1,16 +1,16 @@
 [
     {
-      "src": "./images/komaki/mx-3.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/ev-showroom.appspot.com/o/mx-3.png?alt=media&token=7e3c098d-60c3-4da7-851f-2153e9a4a32d",
       "alt": "mx-3",
       "product":"MX-3"
     },
     {
-      "src": "./images/komaki/xgt-charge.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/ev-showroom.appspot.com/o/xgt-charge.png?alt=media&token=b4639c72-08f5-469e-8dfe-8979373f7647",
       "alt": "xgt-charge",
       "product":"XGT-CHARGE"
     },
     {
-      "src": "./images/komaki/xgt-classic.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/ev-showroom.appspot.com/o/xgt-classic.png?alt=media&token=2c3ea7f8-7478-4fb3-8225-dc1bfd14a8c4",
       "alt": "xgt-classic",
       "product":"XGT-CLASSIC"
     }

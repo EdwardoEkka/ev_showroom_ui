@@ -1,12 +1,12 @@
 [
     {
-      "src": "./images/komaki/ranger.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/ev-showroom.appspot.com/o/ranger.png?alt=media&token=840cd7ba-6bb3-49a8-b037-cb5c01b87c5e",
       "alt": "ranger",
       "product":"RANGER"
 
     },
     {
-      "src": "./images/komaki/xgt-cat-2.0.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/ev-showroom.appspot.com/o/xgt-cat-2.0.png?alt=media&token=51ddb2f1-ba0e-47b8-ab3d-6a7b266b29c6",
       "alt": "xgt-cat-2.0",
       "product":"XGT-CAT-2.0"
     }

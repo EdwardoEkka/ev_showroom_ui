@@ -1,60 +1,60 @@
 [
     {
-      "src": "./images/komaki/ranger.png",
+      "src": "https://firebasestorage.googleapis.com/v0/b/ev-showroom.appspot.com/o/ranger.png?alt=media&token=840cd7ba-6bb3-49a8-b037-cb5c01b87c5e",
       "alt": "ranger",
       "product":"RANGER"
 
     },
     {
-        "src": "./images/komaki/ranger1.png",
+        "src": "https://firebasestorage.googleapis.com/v0/b/ev-showroom.appspot.com/o/ranger1.png?alt=media&token=cda7700a-aa1f-4bdc-b648-aedbbadc6ee9",
         "alt": "ranger1",
         "product":"RANGER1"
   
       },
       {
-        "src": "./images/komaki/ranger2.png",
+        "src": "https://firebasestorage.googleapis.com/v0/b/ev-showroom.appspot.com/o/ranger2.png?alt=media&token=edd813d2-6c3a-43f7-b461-29a968d2fdbf",
         "alt": "ranger2",
         "product":"RANGER2"
   
       },
       {
-        "src": "./images/komaki/ranger3.png",
+        "src": "https://firebasestorage.googleapis.com/v0/b/ev-showroom.appspot.com/o/ranger3.png?alt=media&token=e0b9f046-9e04-4d3e-a4d6-0774e83af025",
         "alt": "ranger3",
         "product":"RANGER3"
   
       },
       {
-        "src": "./images/komaki/ranger4.png",
+        "src": "https://firebasestorage.googleapis.com/v0/b/ev-showroom.appspot.com/o/ranger4.png?alt=media&token=23485963-df1b-4842-a97d-3634cf70200d",
         "alt": "ranger4",
         "product":"RANGER4"
   
       },
       {
-        "src": "./images/komaki/ranger5.png",
+        "src": "https://firebasestorage.googleapis.com/v0/b/ev-showroom.appspot.com/o/ranger5.png?alt=media&token=cdcc29ad-5147-4c1c-accf-105d21a3d7bc",
         "alt": "ranger5",
         "product":"RANGER5"
   
       },
       {
-        "src": "./images/komaki/ranger6.png",
+        "src": "https://firebasestorage.googleapis.com/v0/b/ev-showroom.appspot.com/o/ranger6.png?alt=media&token=f60c91b4-31b6-43d5-9804-4d8cff730e90",
         "alt": "ranger6",
         "product":"RANGER6"
   
       },
       {
-        "src": "./images/komaki/ranger7.png",
+        "src": "https://firebasestorage.googleapis.com/v0/b/ev-showroom.appspot.com/o/ranger7.png?alt=media&token=e79c970a-7fd4-4bfc-b89f-7dc072e37b62",
         "alt": "ranger7",
         "product":"RANGER7"
   
       },
       {
-        "src": "./images/komaki/ranger8.png",
+        "src": "https://firebasestorage.googleapis.com/v0/b/ev-showroom.appspot.com/o/ranger8.png?alt=media&token=70669ece-cca3-4b8e-989b-2f030e7ab925",
         "alt": "ranger8",
         "product":"RANGER8"
   
       },
       {
-        "src": "./images/komaki/ranger9.png",
+        "src": "https://firebasestorage.googleapis.com/v0/b/ev-showroom.appspot.com/o/ranger9.png?alt=media&token=aa103c37-9a03-49b2-902a-5b102a934e2b",
         "alt": "ranger9",
         "product":"RANGER9"
   
