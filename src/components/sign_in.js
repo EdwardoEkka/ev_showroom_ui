@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {useGoogleLogin } from "@react-oauth/google";
+import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios"; // Import Axios
 import "./styles/sign_in.css"; // Importing CSS file for styling
 import { setToken } from "../tokenService";
@@ -7,17 +7,18 @@ import { BiSolidHide, BiSolidShow } from "react-icons/bi";
 import { RxCross1 } from "react-icons/rx";
 import { FcGoogle } from "react-icons/fc";
 import { useUserContext } from "../userContext";
-import toast,{Toaster} from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
-const SignIn = ({ showSign_in, showSign_up, setRefresh}) => {
+const SignIn = ({ showSign_in, showSign_up, setRefresh }) => {
   const { updateUser } = useUserContext();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
 
-  //
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(false); // Loading state
+
   const login = useGoogleLogin({
     onSuccess: (codeResponse) => {
       setUser(codeResponse);
@@ -28,6 +29,7 @@ const SignIn = ({ showSign_in, showSign_up, setRefresh}) => {
 
   useEffect(() => {
     if (user) {
+      setLoading(true);
       axios
         .get(
           `https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`,
@@ -41,7 +43,10 @@ const SignIn = ({ showSign_in, showSign_up, setRefresh}) => {
         .then((res) => {
           saveUserToDatabase(res.data);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          console.log(err);
+          setLoading(false);
+        });
     }
   }, [user]);
 
@@ -58,9 +63,11 @@ const SignIn = ({ showSign_in, showSign_up, setRefresh}) => {
       })
       .catch((error) => {
         console.error("Error saving user to database:", error);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
-  //
 
   const [showPassword, setShowPassword] = useState(false); // State to track password visibility
 
@@ -75,12 +82,13 @@ const SignIn = ({ showSign_in, showSign_up, setRefresh}) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (formData.email.trim() === '' || formData.password.trim() === '') {
+    if (formData.email.trim() === "" || formData.password.trim() === "") {
       toast.error("Please fill in all fields.");
       return; // Exit early if any field is empty
     }
 
     try {
+      setLoading(true);
       // Make POST request to backend API endpoint
       const response = await axios.post(
         `${process.env.REACT_APP_BASE_API_URL}/manual-sign_in`,
@@ -92,86 +100,86 @@ const SignIn = ({ showSign_in, showSign_up, setRefresh}) => {
       showSign_in();
       toast.success("Logged In Successfully");
       console.log("Sign-in successful:", response.data);
-      updateUser(response.data.user.email,response.data.user.name,response.data.id);
-      // Optionally, you can redirect the user or show a success message
+      updateUser(response.data.user.email, response.data.user.name, response.data.id);
     } catch (error) {
       console.error("Error signing in:", error);
       toast.error(error.response.data.message);
-      // Optionally, you can show an error message to the user
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <div>
-    <div className="sign-in-container">
-      <div
-        style={{ position: "absolute", right: "0px", top: "0", padding: "5px" }}
-      >
-        <RxCross1
-          onClick={() => {
-            showSign_in();
-          }}
-        />
-      </div>
-      <h2 className="sign-in-heading">Sign In</h2>
-      <div
-        className="con-google"
-        onClick={() => {
-          login();
-          console.log("hello");
-        }}
-      >
-        <FcGoogle /> Login with Google
-      </div>
-      <div className="line">
-        <div className="or">OR</div>
-      </div>
-      <form className="sign-in-form" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className="form-control"
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-
-          <input
-            type={showPassword ? "text" : "password"}
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            className="form-control"
-          />
-          <div className="password-toggle" onClick={togglePasswordVisibility}>
-            {showPassword ? <BiSolidHide /> : <BiSolidShow />}
-          </div>
-        </div>
-        <button type="submit" className="btn sign-up-btn">
-          Sign in
-        </button>
-      </form>
-      <div className="sign-up-redirect">
-        <p>
-          No account?{" "}
-          <span
-            style={{ color: "green", cursor: "pointer" }}
+      <div className="sign-in-container">
+        <div
+          style={{ position: "absolute", right: "0px", top: "0", padding: "5px" }}
+        >
+          <RxCross1
             onClick={() => {
-              showSign_up();
+              showSign_in();
             }}
-          >
-            Sign up
-          </span>
-        </p>
+          />
+        </div>
+        <h2 className="sign-in-heading">Sign In</h2>
+        <div
+          className="con-google"
+          onClick={() => {
+            login();
+            console.log("hello");
+          }}
+        >
+          <FcGoogle /> Login with Google
+        </div>
+        <div className="line">
+          <div className="or">OR</div>
+        </div>
+        <form className="sign-in-form" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className="form-control"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+
+            <input
+              type={showPassword ? "text" : "password"}
+              id="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              className="form-control"
+            />
+            <div className="password-toggle" onClick={togglePasswordVisibility}>
+              {showPassword ? <BiSolidHide /> : <BiSolidShow />}
+            </div>
+          </div>
+          <button type="submit" className="btn sign-up-btn" disabled={loading}>
+            {loading ? "Signing in..." : "Sign in"}
+          </button>
+        </form>
+        <div className="sign-up-redirect">
+          <p>
+            No account?{" "}
+            <span
+              style={{ color: "green", cursor: "pointer" }}
+              onClick={() => {
+                showSign_up();
+              }}
+            >
+              Sign up
+            </span>
+          </p>
+        </div>
       </div>
-    </div>
-    <Toaster/>
+      <Toaster />
     </div>
   );
 };

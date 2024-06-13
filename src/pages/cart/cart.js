@@ -5,18 +5,18 @@ import Footer from "../../components/footer";
 import SignUp from "../../components/sign_up";
 import SignIn from "../../components/sign_in";
 import { useUserContext } from "../../userContext";
-import './cart.css';
-import toast,{ Toaster } from "react-hot-toast";
+import "./cart.css";
+import toast, { Toaster } from "react-hot-toast";
 import Log from "../../components/log";
 
 const Cart = () => {
   const [showProducts, setShowProducts] = useState(false);
-  const [bookings, setBookings] = useState(null);
+  const [bookings, setBookings] = useState([]);
   const [sign_in, setSign_in] = useState(false);
   const [sign_up, setSign_up] = useState(false);
   const [refresh, setRefresh] = useState(false);
   const [s_open, setS_open] = useState(true);
-  const { user} = useUserContext();
+  const { user } = useUserContext();
 
   const ShowProducts = () => {
     setShowProducts(!showProducts);
@@ -59,7 +59,7 @@ const Cart = () => {
     fetchCart();
   }, [user.userId]);
 
-  const handleDelete=async(bookId)=>{
+  const handleDelete = async (bookId) => {
     try {
       const response = await axios.delete(
         `${process.env.REACT_APP_BASE_API_URL}/delete-booking/${bookId}`
@@ -74,7 +74,7 @@ const Cart = () => {
         toast.error("Failed to delete. Please try again later.");
       }
     }
-  }
+  };
 
   return (
     <div>
@@ -94,25 +94,34 @@ const Cart = () => {
         open={open}
       />
       {user.name === null && user.userId === null ? (
-        <div><Log/></div>
+        <Log />
       ) : (
-        bookings &&(
-          <div className="c-main">
+        <div className="c-main">
           <div className="c-container">
-            {bookings.map((item, index) => (
-              <div className="div-c" key={index}>
-                <img src={`/images/komaki/${item.product}.png`} alt={item.product} />
-                <div className="c-hov">
-                  <button className="delete-book-button" onClick={()=>{handleDelete(item._id)}}>Remove</button>
-                </div>
+            {bookings.length === 0 ? (
+              <div style={{ height: "100vh", width: "100%", textAlign: "center" }}>
+                Your Cart is empty.
               </div>
-            ))}
+            ) : (
+              bookings.map((item, index) => (
+                <div className="div-c" key={index}>
+                  <img src={item.product_url} alt={item.product} />
+                  <div className="c-hov">
+                    <button
+                      className="delete-book-button"
+                      onClick={() => handleDelete(item._id)}
+                    >
+                      Remove
+                    </button>
+                  </div>
+                </div>
+              ))
+            )}
           </div>
-          </div>  
-        )
+        </div>
       )}
       <Footer />
-      <Toaster/>
+      <Toaster />
     </div>
   );
 };

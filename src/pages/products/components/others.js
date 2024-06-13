@@ -18,7 +18,7 @@ const Others = () => {
           <div className="div-o" key={index}>
             <img src={image.src} alt={image.alt} />
             <div className="o-hov">
-              <Book product={image.product} />
+              <Book product={image.product} product_url={image.src} />
             </div>
           </div>
         ))}

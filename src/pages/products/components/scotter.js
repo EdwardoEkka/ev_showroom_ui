@@ -18,7 +18,7 @@ const Scotter = () => {
           <div className="div-s" key={index}>
             <img src={image.src} alt={image.alt} />
             <div className="s-hov">
-            <Book product={image.product}/>
+            <Book product={image.product} product_url={image.src} />
             </div>
           </div>
         ))}

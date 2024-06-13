@@ -8,8 +8,7 @@ import SignUp from "../../components/sign_up";
 import SignIn from "../../components/sign_in";
 import Navbar from "../../components/navbar";
 
-
-const Conatct_Us = () => {
+const Contact_Us = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstName: "",
@@ -19,6 +18,7 @@ const Conatct_Us = () => {
     message: "",
   });
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false); // State to track loading status
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,17 +27,20 @@ const Conatct_Us = () => {
       [name]: value,
     });
   };
- 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     for (const key in formData) {
       if (formData[key] === "") {
-        setError(`Please enter your ${key.replace(/([A-Z])/g, " $1").trim()}.`);
-        toast.error(`Please enter your ${key.replace(/([A-Z])/g, " $1").trim()}.`);
+        const errorMessage = `Please enter your ${key.replace(/([A-Z])/g, " $1").trim()}.`;
+        setError(errorMessage);
+        toast.error(errorMessage);
         return;
       }
     }
     setError("");
+    setIsLoading(true); // Set loading state to true
+
     try {
       // Send formData to your backend API
       const response = await axios.post(
@@ -49,19 +52,19 @@ const Conatct_Us = () => {
     } catch (error) {
       console.error("Error:", error);
       // Handle error if request fails
-      setError("Failed to submit form. Please try again later.");
-      toast.error("Failed to submit form. Please try again later.");
+      const errorMessage = error.response?.data?.message || "Failed to submit form. Please try again later.";
+      setError(errorMessage);
+      toast.error(errorMessage);
+    } finally {
+      setIsLoading(false); // Set loading state to false after request completes
     }
   };
 
-  //
   const [showProducts, setShowProducts] = useState(false);
   const [sign_in, setSign_in] = useState(false);
   const [sign_up, setSign_up] = useState(false);
   const [refresh, setRefresh] = useState(false);
   const [s_open, setS_open] = useState(true);
-
-
 
   const ShowProducts = () => {
     setShowProducts(!showProducts);
@@ -93,16 +96,12 @@ const Conatct_Us = () => {
             showSign_in={showSign_in}
             showSign_up={showSign_up}
             setRefresh={() => setRefresh(!refresh)}
-          
           />
         ) : (
           ""
         )}
         {sign_up ? (
-          <SignUp
-            close_sign_up={close_sign_up}
-          
-          />
+          <SignUp close_sign_up={close_sign_up} />
         ) : (
           ""
         )}
@@ -192,7 +191,9 @@ const Conatct_Us = () => {
               />
             </div>
             <div className="sub_btn">
-              <button type="submit">Contact Sales</button>
+              <button type="submit" disabled={isLoading}>
+                {isLoading ? "Submitting..." : "Contact Sales"}
+              </button>
             </div>
           </form>
         </div>
@@ -202,4 +203,4 @@ const Conatct_Us = () => {
   );
 };
 
-export default Conatct_Us;
+export default Contact_Us;

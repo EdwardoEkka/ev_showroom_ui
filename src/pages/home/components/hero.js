@@ -26,7 +26,6 @@ const Hero = () => {
   return (
     <div className="main-c">
       <div className="container1">
-        {/* <img src="./images/bg.png" alt="img1"></img> */}
         <Hero_Top/>
         <div className="written_container">
           <h1>Electric Vehicle Show Room</h1>
